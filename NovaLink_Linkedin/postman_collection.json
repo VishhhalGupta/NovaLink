@@ -1,0 +1,138 @@
+{
+  "info": {
+    "name": "LinkedIn NovaLink API",
+    "description": "API collection for testing LinkedIn NovaLink backend",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/health",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "health"]
+        }
+      }
+    },
+    {
+      "name": "Test Connection",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/linkedin/test/connection",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "linkedin", "test", "connection"]
+        }
+      }
+    },
+    {
+      "name": "Verify Token",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/linkedin/auth/verify",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "linkedin", "auth", "verify"]
+        }
+      }
+    },
+    {
+      "name": "Get Profile",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/linkedin/profile",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "linkedin", "profile"]
+        }
+      }
+    },
+    {
+      "name": "Test Post (Dry Run)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"text\": \"This is a test post!\",\n  \"type\": \"text\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/linkedin/test/post",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "linkedin", "test", "post"]
+        }
+      }
+    },
+    {
+      "name": "Create Text Post",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"text\": \"Hello LinkedIn! This is my first post via the NovaLink API.\",\n  \"visibility\": \"PUBLIC\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/linkedin/post/text",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "linkedin", "post", "text"]
+        }
+      }
+    },
+    {
+      "name": "Create Article Post",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"text\": \"Check out this amazing article!\",\n  \"articleUrl\": \"https://example.com/article\",\n  \"articleTitle\": \"Amazing Article\",\n  \"articleDescription\": \"This article is about...\",\n  \"visibility\": \"PUBLIC\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/linkedin/post/article",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "linkedin", "post", "article"]
+        }
+      }
+    },
+    {
+      "name": "Refresh Token",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/linkedin/auth/refresh",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "linkedin", "auth", "refresh"]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    }
+  ]
+}
